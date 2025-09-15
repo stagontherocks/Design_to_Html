@@ -1,0 +1,114 @@
+// ===========================================
+// DESIGN TOKENS - VARIABLES
+// ===========================================
+
+// COLORS
+$star-blue-50:   #e6e9ed;
+$star-blue-100:  #b0bac6;
+$star-blue-200:  #8a99aa;
+$star-blue-300:  #546a84;
+$star-blue-400:  #334d6c;
+$star-blue-500:  #002F5F;
+$star-blue-600:  #002147;
+$star-blue-700:  #001732;
+$star-blue-800:  #060524;
+$star-blue-900:  #000e1e;
+
+$orange-50:      #fff1e6;
+$orange-100:     #ffd2b0;
+$orange-200:     #ffbd8a;
+$orange-300:     #ff9f54;
+$orange-400:     #ff8c33;
+$orange-500:     #ff6f00;
+$orange-600:     #e86500;
+$orange-700:     #b54f00;
+$orange-800:     #8c3d00;
+$orange-900:     #6b2f00;
+
+$sky-blue-50:    #e6f7ff;
+$sky-blue-100:   #b0e7ff;
+$sky-blue-200:   #8adbff;
+$sky-blue-300:   #54caff;
+$sky-blue-400:   #33c0ff;
+$sky-blue-500:   #00b0ff;
+$sky-blue-600:   #00a0e8;
+$sky-blue-700:   #007db5;
+$sky-blue-800:   #00618c;
+$sky-blue-900:   #004a6b;
+
+$neutral-50:     #f3f4f6;
+$neutral-100:    #d9dde2;
+$neutral-200:    #c7ccd4;
+$neutral-300:    #adb5c1;
+$neutral-400:    #9da6b5;
+$neutral-500:    #8590a2;
+$neutral-600:    #798393;
+$neutral-700:    #5e6673;
+$neutral-800:    #494f59;
+$neutral-900:    #383c44;
+
+$red-500:        #ff5630;
+$blue-500:       #007bc3;
+$green-500:      #2abb7f;
+$yellow-500:     #ffab00;
+$purple-500:     #6554c0;
+$pink-500:       #da62ac;
+$lime-500:       #82b536;
+$teal-500:       #00b8d9;
+
+$white:          #FFFFFF;
+$black:          #000000;
+
+// ALIAS TOKENS
+$primary:        $star-blue-600;
+$secondary:      $orange-500;
+$territory:      $sky-blue-500;
+$neutral:        $neutral-500;
+$red:            $red-500;
+$blue:           $blue-500;
+$green:          $green-500;
+$yellow:         $yellow-500;
+$purple:         $purple-500;
+$pink:           $pink-500;
+$lime:           $lime-500;
+$teal:           $teal-500;
+$disabled:       $neutral-300;
+$error:          $red-500;
+$info:           $blue-500;
+$success:        $green-500;
+$warning:        $yellow-500;
+$light:          $white;
+$dark:           $black;
+
+// BACKGROUND TOKENS
+$bg-light:       $neutral-50;
+$bg-dark:        $neutral-900;
+$bg-primary:     $primary;
+$bg-secondary:   $secondary;
+$bg-light-gray:  $neutral-100;
+$bg-mid-gray:    $neutral-400;
+$bg-light-blue:  $sky-blue-50;
+$bg-light-orange:$orange-50;
+
+// BORDER TOKENS
+$border-light:   $neutral-100;
+$border-med:     $neutral-400;
+$border-dark:    $neutral-700;
+$border-primary: $primary;
+$border-secondary:$secondary;
+$border-blue:    $blue-500;
+
+// TEXT TOKENS
+$text-white:     $white;
+$text-dark:      $black;
+$text-primary:   $primary;
+$text-secondary: $secondary;
+$text-light:     $neutral-100;
+$text-med:       $neutral-500;
+$text-link:      $blue-500;
+
+// Additional color variables
+$accent: #FFD153;
+$background: #F5F5F7;
+$text: #060524;
+$border: #DADADD;

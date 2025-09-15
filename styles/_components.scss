@@ -1,0 +1,492 @@
+// ===========================================
+// COMPONENT CLASSES
+// ===========================================
+
+@import 'variables';
+@import 'mixins';
+
+// ===========================================
+// BUTTONS
+// ===========================================
+
+.btn {
+  @include button-reset;
+  display: inline-block;
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: $spacer-4 $spacer-8;
+  font-size: $body-md-font-size;
+  border-radius: $border-radius;
+  transition: all 0.15s ease-in-out;
+
+  &:focus {
+    @include focus-ring;
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+// Button variants
+.btn-primary {
+  color: $text-white;
+  background-color: $primary;
+  border-color: $primary;
+
+  &:hover:not(:disabled):not(.disabled) {
+    background-color: darken($primary, 7.5%);
+    border-color: darken($primary, 10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);
+  }
+}
+
+.btn-secondary {
+  color: $text-white;
+  background-color: $secondary;
+  border-color: $secondary;
+
+  &:hover:not(:disabled):not(.disabled) {
+    background-color: darken($secondary, 7.5%);
+    border-color: darken($secondary, 10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($secondary, 0.5);
+  }
+}
+
+.btn-success {
+  color: $text-white;
+  background-color: $success;
+  border-color: $success;
+
+  &:hover:not(:disabled):not(.disabled) {
+    background-color: darken($success, 7.5%);
+    border-color: darken($success, 10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($success, 0.5);
+  }
+}
+
+.btn-danger {
+  color: $text-white;
+  background-color: $error;
+  border-color: $error;
+
+  &:hover:not(:disabled):not(.disabled) {
+    background-color: darken($error, 7.5%);
+    border-color: darken($error, 10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($error, 0.5);
+  }
+}
+
+.btn-warning {
+  color: $text-dark;
+  background-color: $warning;
+  border-color: $warning;
+
+  &:hover:not(:disabled):not(.disabled) {
+    background-color: darken($warning, 7.5%);
+    border-color: darken($warning, 10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($warning, 0.5);
+  }
+}
+
+.btn-info {
+  color: $text-white;
+  background-color: $info;
+  border-color: $info;
+
+  &:hover:not(:disabled):not(.disabled) {
+    background-color: darken($info, 7.5%);
+    border-color: darken($info, 10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($info, 0.5);
+  }
+}
+
+.btn-light {
+  color: $text-dark;
+  background-color: $bg-light;
+  border-color: $border-light;
+
+  &:hover:not(:disabled):not(.disabled) {
+    background-color: darken($bg-light, 7.5%);
+    border-color: darken($border-light, 10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($bg-light, 0.5);
+  }
+}
+
+.btn-dark {
+  color: $text-white;
+  background-color: $bg-dark;
+  border-color: $bg-dark;
+
+  &:hover:not(:disabled):not(.disabled) {
+    background-color: lighten($bg-dark, 7.5%);
+    border-color: lighten($bg-dark, 10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($bg-dark, 0.5);
+  }
+}
+
+.btn-outline-primary {
+  color: $primary;
+  border-color: $primary;
+  background-color: transparent;
+
+  &:hover:not(:disabled):not(.disabled) {
+    color: $text-white;
+    background-color: $primary;
+    border-color: $primary;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);
+  }
+}
+
+.btn-outline-secondary {
+  color: $secondary;
+  border-color: $secondary;
+  background-color: transparent;
+
+  &:hover:not(:disabled):not(.disabled) {
+    color: $text-white;
+    background-color: $secondary;
+    border-color: $secondary;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($secondary, 0.5);
+  }
+}
+
+// Button sizes
+.btn-sm {
+  padding: $spacer-2 $spacer-4;
+  font-size: $body-sm-font-size;
+  border-radius: $border-radius-sm;
+}
+
+.btn-lg {
+  padding: $spacer-6 $spacer-12;
+  font-size: $body-lg-font-size;
+  border-radius: $border-radius-lg;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// ===========================================
+// CARDS
+// ===========================================
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: $white;
+  background-clip: border-box;
+  border: 1px solid $border-light;
+  border-radius: $border-radius;
+  @include card-shadow;
+
+  > hr {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: $spacer-8;
+  color: $text-dark;
+}
+
+.card-title {
+  margin-bottom: $spacer-4;
+  font-size: $h5-font-size;
+  font-weight: $font-weight-medium;
+}
+
+.card-subtitle {
+  margin-top: -$spacer-2;
+  margin-bottom: 0;
+  font-size: $body-sm-font-size;
+  color: $text-med;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link {
+  &:hover {
+    text-decoration: none;
+  }
+
+  + .card-link {
+    margin-left: $spacer-8;
+  }
+}
+
+.card-header {
+  padding: $spacer-6 $spacer-8;
+  margin-bottom: 0;
+  color: $text-dark;
+  background-color: $bg-light;
+  border-bottom: 1px solid $border-light;
+  border-top-left-radius: calc(#{$border-radius} - 1px);
+  border-top-right-radius: calc(#{$border-radius} - 1px);
+
+  &:first-child {
+    border-radius: calc(#{$border-radius} - 1px) calc(#{$border-radius} - 1px) 0 0;
+  }
+}
+
+.card-footer {
+  padding: $spacer-6 $spacer-8;
+  color: $text-dark;
+  background-color: $bg-light;
+  border-top: 1px solid $border-light;
+  border-bottom-right-radius: calc(#{$border-radius} - 1px);
+  border-bottom-left-radius: calc(#{$border-radius} - 1px);
+
+  &:last-child {
+    border-radius: 0 0 calc(#{$border-radius} - 1px) calc(#{$border-radius} - 1px);
+  }
+}
+
+// ===========================================
+// FORMS
+// ===========================================
+
+.form-group {
+  margin-bottom: $spacer-8;
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: $spacer-2;
+  font-weight: $font-weight-medium;
+  color: $text-dark;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: $spacer-4 $spacer-6;
+  font-size: $body-md-font-size;
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $text-dark;
+  background-color: $white;
+  background-clip: padding-box;
+  border: 1px solid $border-med;
+  border-radius: $border-radius;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    color: $text-dark;
+    background-color: $white;
+    border-color: $primary;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+  }
+
+  &::placeholder {
+    color: $text-med;
+    opacity: 1;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $bg-light;
+    opacity: 1;
+  }
+}
+
+.form-control-sm {
+  padding: $spacer-2 $spacer-4;
+  font-size: $body-sm-font-size;
+  border-radius: $border-radius-sm;
+}
+
+.form-control-lg {
+  padding: $spacer-6 $spacer-8;
+  font-size: $body-lg-font-size;
+  border-radius: $border-radius-lg;
+}
+
+.form-text {
+  display: block;
+  margin-top: $spacer-2;
+  font-size: $body-sm-font-size;
+  color: $text-med;
+}
+
+.form-check {
+  position: relative;
+  display: block;
+  padding-left: $spacer-12;
+}
+
+.form-check-input {
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: -$spacer-12;
+}
+
+.form-check-label {
+  color: $text-dark;
+  cursor: pointer;
+}
+
+// ===========================================
+// ALERTS
+// ===========================================
+
+.alert {
+  position: relative;
+  padding: $spacer-6 $spacer-8;
+  margin-bottom: $spacer-8;
+  border: 1px solid transparent;
+  border-radius: $border-radius;
+}
+
+.alert-primary {
+  color: darken($primary, 20%);
+  background-color: lighten($primary, 40%);
+  border-color: lighten($primary, 30%);
+}
+
+.alert-secondary {
+  color: darken($secondary, 20%);
+  background-color: lighten($secondary, 40%);
+  border-color: lighten($secondary, 30%);
+}
+
+.alert-success {
+  color: darken($success, 20%);
+  background-color: lighten($success, 40%);
+  border-color: lighten($success, 30%);
+}
+
+.alert-danger {
+  color: darken($error, 20%);
+  background-color: lighten($error, 40%);
+  border-color: lighten($error, 30%);
+}
+
+.alert-warning {
+  color: darken($warning, 20%);
+  background-color: lighten($warning, 40%);
+  border-color: lighten($warning, 30%);
+}
+
+.alert-info {
+  color: darken($info, 20%);
+  background-color: lighten($info, 40%);
+  border-color: lighten($info, 30%);
+}
+
+.alert-light {
+  color: darken($bg-light, 20%);
+  background-color: $bg-light;
+  border-color: $border-light;
+}
+
+.alert-dark {
+  color: lighten($bg-dark, 20%);
+  background-color: $bg-dark;
+  border-color: darken($bg-dark, 10%);
+}
+
+// ===========================================
+// BADGES
+// ===========================================
+
+.badge {
+  display: inline-block;
+  padding: $spacer-1 $spacer-3;
+  font-size: $body-xs-font-size;
+  font-weight: $font-weight-semibold;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: $border-radius-sm;
+}
+
+.badge-primary {
+  color: $text-white;
+  background-color: $primary;
+}
+
+.badge-secondary {
+  color: $text-white;
+  background-color: $secondary;
+}
+
+.badge-success {
+  color: $text-white;
+  background-color: $success;
+}
+
+.badge-danger {
+  color: $text-white;
+  background-color: $error;
+}
+
+.badge-warning {
+  color: $text-dark;
+  background-color: $warning;
+}
+
+.badge-info {
+  color: $text-white;
+  background-color: $info;
+}
+
+.badge-light {
+  color: $text-dark;
+  background-color: $bg-light;
+}
+
+.badge-dark {
+  color: $text-white;
+  background-color: $bg-dark;
+}
+

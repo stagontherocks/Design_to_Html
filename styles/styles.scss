@@ -1,0 +1,28 @@
+// ===========================================
+// MAIN SCSS FILE
+// ===========================================
+
+/*body {
+  background: #F5F5F7 url('images/line_bg.png') no-repeat;
+  background-size: cover;
+  background-position: center 40px;
+  margin: 0 auto;
+  font-family: 'Barlow', sans-serif;
+}
+*/
+
+// Import all design system modules
+@import 'variables';
+@import 'typography';
+@import 'spacing';
+@import 'shadows';
+@import 'mixins';
+
+// Import utility and component classes
+@import 'utilities';
+@import 'components';
+@import 'grid';
+@import 'responsive';
+
+// Button styles
+

@@ -1,0 +1,327 @@
+// ===========================================
+// RESPONSIVE UTILITIES
+// ===========================================
+
+@import 'variables';
+@import 'mixins';
+
+// ===========================================
+// RESPONSIVE DISPLAY UTILITIES
+// ===========================================
+
+// Mobile first approach
+.d-none { display: none !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-block { display: block !important; }
+.d-flex { display: flex !important; }
+.d-inline-flex { display: inline-flex !important; }
+.d-grid { display: grid !important; }
+
+// Tablet and up
+@include tablet-up {
+  .d-md-none { display: none !important; }
+  .d-md-inline { display: inline !important; }
+  .d-md-inline-block { display: inline-block !important; }
+  .d-md-block { display: block !important; }
+  .d-md-flex { display: flex !important; }
+  .d-md-inline-flex { display: inline-flex !important; }
+  .d-md-grid { display: grid !important; }
+}
+
+// Desktop and up
+@include desktop-up {
+  .d-lg-none { display: none !important; }
+  .d-lg-inline { display: inline !important; }
+  .d-lg-inline-block { display: inline-block !important; }
+  .d-lg-block { display: block !important; }
+  .d-lg-flex { display: flex !important; }
+  .d-lg-inline-flex { display: inline-flex !important; }
+  .d-lg-grid { display: grid !important; }
+}
+
+// Large desktop and up
+@include large-desktop-up {
+  .d-xl-none { display: none !important; }
+  .d-xl-inline { display: inline !important; }
+  .d-xl-inline-block { display: inline-block !important; }
+  .d-xl-block { display: block !important; }
+  .d-xl-flex { display: flex !important; }
+  .d-xl-inline-flex { display: inline-flex !important; }
+  .d-xl-grid { display: grid !important; }
+}
+
+// ===========================================
+// RESPONSIVE TEXT UTILITIES
+// ===========================================
+
+// Text alignment
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+
+@include tablet-up {
+  .text-md-left { text-align: left !important; }
+  .text-md-center { text-align: center !important; }
+  .text-md-right { text-align: right !important; }
+}
+
+@include desktop-up {
+  .text-lg-left { text-align: left !important; }
+  .text-lg-center { text-align: center !important; }
+  .text-lg-right { text-align: right !important; }
+}
+
+@include large-desktop-up {
+  .text-xl-left { text-align: left !important; }
+  .text-xl-center { text-align: center !important; }
+  .text-xl-right { text-align: right !important; }
+}
+
+// ===========================================
+// RESPONSIVE SPACING UTILITIES
+// ===========================================
+
+// Generate responsive spacing utilities
+@each $breakpoint in (md, lg, xl) {
+  @each $key, $value in (
+    0: 0,
+    1: $spacer-1,
+    2: $spacer-2,
+    3: $spacer-3,
+    4: $spacer-4,
+    5: $spacer-5,
+    6: $spacer-6,
+    7: $spacer-7,
+    8: $spacer-8,
+    9: $spacer-9,
+    10: $spacer-10,
+    11: $spacer-11,
+    12: $spacer-12,
+    13: $spacer-13,
+    14: $spacer-14,
+    15: $spacer-15,
+    16: $spacer-16,
+    17: $spacer-17,
+    18: $spacer-18,
+    19: $spacer-19,
+    20: $spacer-20
+  ) {
+    @if $breakpoint == md {
+      @include tablet-up {
+        .m-#{$breakpoint}-#{$key} { margin: $value !important; }
+        .mt-#{$breakpoint}-#{$key} { margin-top: $value !important; }
+        .mr-#{$breakpoint}-#{$key} { margin-right: $value !important; }
+        .mb-#{$breakpoint}-#{$key} { margin-bottom: $value !important; }
+        .ml-#{$breakpoint}-#{$key} { margin-left: $value !important; }
+        .mx-#{$breakpoint}-#{$key} { 
+          margin-left: $value !important; 
+          margin-right: $value !important; 
+        }
+        .my-#{$breakpoint}-#{$key} { 
+          margin-top: $value !important; 
+          margin-bottom: $value !important; 
+        }
+        .p-#{$breakpoint}-#{$key} { padding: $value !important; }
+        .pt-#{$breakpoint}-#{$key} { padding-top: $value !important; }
+        .pr-#{$breakpoint}-#{$key} { padding-right: $value !important; }
+        .pb-#{$breakpoint}-#{$key} { padding-bottom: $value !important; }
+        .pl-#{$breakpoint}-#{$key} { padding-left: $value !important; }
+        .px-#{$breakpoint}-#{$key} { 
+          padding-left: $value !important; 
+          padding-right: $value !important; 
+        }
+        .py-#{$breakpoint}-#{$key} { 
+          padding-top: $value !important; 
+          padding-bottom: $value !important; 
+        }
+      }
+    }
+    @if $breakpoint == lg {
+      @include desktop-up {
+        .m-#{$breakpoint}-#{$key} { margin: $value !important; }
+        .mt-#{$breakpoint}-#{$key} { margin-top: $value !important; }
+        .mr-#{$breakpoint}-#{$key} { margin-right: $value !important; }
+        .mb-#{$breakpoint}-#{$key} { margin-bottom: $value !important; }
+        .ml-#{$breakpoint}-#{$key} { margin-left: $value !important; }
+        .mx-#{$breakpoint}-#{$key} { 
+          margin-left: $value !important; 
+          margin-right: $value !important; 
+        }
+        .my-#{$breakpoint}-#{$key} { 
+          margin-top: $value !important; 
+          margin-bottom: $value !important; 
+        }
+        .p-#{$breakpoint}-#{$key} { padding: $value !important; }
+        .pt-#{$breakpoint}-#{$key} { padding-top: $value !important; }
+        .pr-#{$breakpoint}-#{$key} { padding-right: $value !important; }
+        .pb-#{$breakpoint}-#{$key} { padding-bottom: $value !important; }
+        .pl-#{$breakpoint}-#{$key} { padding-left: $value !important; }
+        .px-#{$breakpoint}-#{$key} { 
+          padding-left: $value !important; 
+          padding-right: $value !important; 
+        }
+        .py-#{$breakpoint}-#{$key} { 
+          padding-top: $value !important; 
+          padding-bottom: $value !important; 
+        }
+      }
+    }
+    @if $breakpoint == xl {
+      @include large-desktop-up {
+        .m-#{$breakpoint}-#{$key} { margin: $value !important; }
+        .mt-#{$breakpoint}-#{$key} { margin-top: $value !important; }
+        .mr-#{$breakpoint}-#{$key} { margin-right: $value !important; }
+        .mb-#{$breakpoint}-#{$key} { margin-bottom: $value !important; }
+        .ml-#{$breakpoint}-#{$key} { margin-left: $value !important; }
+        .mx-#{$breakpoint}-#{$key} { 
+          margin-left: $value !important; 
+          margin-right: $value !important; 
+        }
+        .my-#{$breakpoint}-#{$key} { 
+          margin-top: $value !important; 
+          margin-bottom: $value !important; 
+        }
+        .p-#{$breakpoint}-#{$key} { padding: $value !important; }
+        .pt-#{$breakpoint}-#{$key} { padding-top: $value !important; }
+        .pr-#{$breakpoint}-#{$key} { padding-right: $value !important; }
+        .pb-#{$breakpoint}-#{$key} { padding-bottom: $value !important; }
+        .pl-#{$breakpoint}-#{$key} { padding-left: $value !important; }
+        .px-#{$breakpoint}-#{$key} { 
+          padding-left: $value !important; 
+          padding-right: $value !important; 
+        }
+        .py-#{$breakpoint}-#{$key} { 
+          padding-top: $value !important; 
+          padding-bottom: $value !important; 
+        }
+      }
+    }
+  }
+}
+
+// ===========================================
+// RESPONSIVE FLEXBOX UTILITIES
+// ===========================================
+
+// Flex direction
+.flex-row { flex-direction: row !important; }
+.flex-column { flex-direction: column !important; }
+.flex-row-reverse { flex-direction: row-reverse !important; }
+.flex-column-reverse { flex-direction: column-reverse !important; }
+
+@include tablet-up {
+  .flex-md-row { flex-direction: row !important; }
+  .flex-md-column { flex-direction: column !important; }
+  .flex-md-row-reverse { flex-direction: row-reverse !important; }
+  .flex-md-column-reverse { flex-direction: column-reverse !important; }
+}
+
+@include desktop-up {
+  .flex-lg-row { flex-direction: row !important; }
+  .flex-lg-column { flex-direction: column !important; }
+  .flex-lg-row-reverse { flex-direction: row-reverse !important; }
+  .flex-lg-column-reverse { flex-direction: column-reverse !important; }
+}
+
+@include large-desktop-up {
+  .flex-xl-row { flex-direction: row !important; }
+  .flex-xl-column { flex-direction: column !important; }
+  .flex-xl-row-reverse { flex-direction: row-reverse !important; }
+  .flex-xl-column-reverse { flex-direction: column-reverse !important; }
+}
+
+// Justify content
+.justify-content-start { justify-content: flex-start !important; }
+.justify-content-end { justify-content: flex-end !important; }
+.justify-content-center { justify-content: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.justify-content-around { justify-content: space-around !important; }
+.justify-content-evenly { justify-content: space-evenly !important; }
+
+@include tablet-up {
+  .justify-content-md-start { justify-content: flex-start !important; }
+  .justify-content-md-end { justify-content: flex-end !important; }
+  .justify-content-md-center { justify-content: center !important; }
+  .justify-content-md-between { justify-content: space-between !important; }
+  .justify-content-md-around { justify-content: space-around !important; }
+  .justify-content-md-evenly { justify-content: space-evenly !important; }
+}
+
+@include desktop-up {
+  .justify-content-lg-start { justify-content: flex-start !important; }
+  .justify-content-lg-end { justify-content: flex-end !important; }
+  .justify-content-lg-center { justify-content: center !important; }
+  .justify-content-lg-between { justify-content: space-between !important; }
+  .justify-content-lg-around { justify-content: space-around !important; }
+  .justify-content-lg-evenly { justify-content: space-evenly !important; }
+}
+
+@include large-desktop-up {
+  .justify-content-xl-start { justify-content: flex-start !important; }
+  .justify-content-xl-end { justify-content: flex-end !important; }
+  .justify-content-xl-center { justify-content: center !important; }
+  .justify-content-xl-between { justify-content: space-between !important; }
+  .justify-content-xl-around { justify-content: space-around !important; }
+  .justify-content-xl-evenly { justify-content: space-evenly !important; }
+}
+
+// Align items
+.align-items-start { align-items: flex-start !important; }
+.align-items-end { align-items: flex-end !important; }
+.align-items-center { align-items: center !important; }
+.align-items-baseline { align-items: baseline !important; }
+.align-items-stretch { align-items: stretch !important; }
+
+@include tablet-up {
+  .align-items-md-start { align-items: flex-start !important; }
+  .align-items-md-end { align-items: flex-end !important; }
+  .align-items-md-center { align-items: center !important; }
+  .align-items-md-baseline { align-items: baseline !important; }
+  .align-items-md-stretch { align-items: stretch !important; }
+}
+
+@include desktop-up {
+  .align-items-lg-start { align-items: flex-start !important; }
+  .align-items-lg-end { align-items: flex-end !important; }
+  .align-items-lg-center { align-items: center !important; }
+  .align-items-lg-baseline { align-items: baseline !important; }
+  .align-items-lg-stretch { align-items: stretch !important; }
+}
+
+@include large-desktop-up {
+  .align-items-xl-start { align-items: flex-start !important; }
+  .align-items-xl-end { align-items: flex-end !important; }
+  .align-items-xl-center { align-items: center !important; }
+  .align-items-xl-baseline { align-items: baseline !important; }
+  .align-items-xl-stretch { align-items: stretch !important; }
+}
+
+// ===========================================
+// RESPONSIVE VISIBILITY UTILITIES
+// ===========================================
+
+// Show/hide utilities
+.show { display: block !important; }
+.hide { display: none !important; }
+
+@include mobile-only {
+  .show-mobile { display: block !important; }
+  .hide-mobile { display: none !important; }
+}
+
+@include tablet-up {
+  .show-tablet { display: block !important; }
+  .hide-tablet { display: none !important; }
+}
+
+@include desktop-up {
+  .show-desktop { display: block !important; }
+  .hide-desktop { display: none !important; }
+}
+
+@include large-desktop-up {
+  .show-large-desktop { display: block !important; }
+  .hide-large-desktop { display: none !important; }
+}
+
